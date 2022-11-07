@@ -95,117 +95,129 @@ public class Proyecto {
 		
 		
 		String extra=teclado.nextLine();
-		for(int veces=0; veces<pasTodos.length;veces++) {
-			System.out.println("");
-			System.out.println("Registre un Nuevo Pasajero: ");
-			System.out.println("");
-		System.out.print("Ingrese C.I.: "+"\033[36m");
-		CI = teclado.nextLine();
-		System.out.println("----------");
-		
-		System.out.print("Ingrese Nombre: "+"\033[36m");
-		Nombre = teclado.nextLine();
-		System.out.println("----------");
-		
-		System.out.print("Ingrese Numero de Telefono: "+"\033[36m");
-		Telefono=teclado.nextLine();
-		System.out.println("----------");
-		
-		System.out.print("Ingrese Categoria: "+"\033[36m");
-		Categoria = teclado.nextLine();
-		System.out.println("----------");
-		
-		pasTodos[veces]="C.I.: "+CI+"\nNombre: "+Nombre+"\nTelefono: "+Telefono+"\nCategoria: "+Categoria;
-		
-		System.out.println(pasTodos[veces]);
-		if(CI.length()<1 || Nombre.length()<1 || Telefono.length()<1 || Categoria.length()<1) {
-			System.out.println("");
-			System.out.println("\033[31mError al registrar, datos nulos o vacios");
-			System.out.println("");
-			if(CI.length()<1) {
-				System.out.print("\033[37mIngrese Cedula de Identidad: "+"\033[36m");
-				CI = teclado.nextLine();
+		do {
+			for(int veces=0; veces<pasTodos.length;veces++) {
+				System.out.println("");
+				System.out.println("Registre un Nuevo Pasajero: ");
+				System.out.println("");
+			System.out.print("Ingrese C.I.: "+"\033[36m");
+			CI = teclado.nextLine();
+			System.out.println("----------");
+			
+			System.out.print("Ingrese Nombre: "+"\033[36m");
+			Nombre = teclado.nextLine();
+			System.out.println("----------");
+			
+			System.out.print("Ingrese Numero de Telefono: "+"\033[36m");
+			Telefono=teclado.nextLine();
+			System.out.println("----------");
+			
+			System.out.print("Ingrese Categoria: "+"\033[36m");
+			Categoria = teclado.nextLine();
+			System.out.println("----------");
+			
+			pasTodos[veces]="C.I.: "+CI+"\nNombre: "+Nombre+"\nTelefono: "+Telefono+"\nCategoria: "+Categoria;
+			
+			System.out.println(pasTodos[veces]);
+			if(CI.length()<1 || Nombre.length()<1 || Telefono.length()<1 || Categoria.length()<1) {
+				System.out.println("");
+				System.out.println("\033[31mError al registrar, datos nulos o vacios");
+				System.out.println("");
+				if(CI.length()<1) {
+					System.out.print("\033[37mIngrese Cedula de Identidad: "+"\033[36m");
+					CI = teclado.nextLine();
+					System.out.println("");
+				}
+				if(Nombre.length()<1) {
+					System.out.print("\033[37mIngrese Nombre: "+"\033[36m");
+					Nombre = teclado.nextLine();
+					System.out.println("");
+				}
+				if(Telefono.length()<1) {
+					System.out.print("\033[37mIngrese Numero de Telefono: "+"\033[36m");
+					Telefono = teclado.nextLine();
+					System.out.println("");
+				}
+				if(Categoria.length()<1) {
+					System.out.print("\033[37mIngrese Categoria: "+"\033[36m");
+					Categoria = teclado.nextLine();
+					System.out.println("");
+				}
+				pasTodos[veces]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+			}
+			if(CI.length()>=1 && Nombre.length()>=1 && Telefono.length()>=1 && Categoria.length()>=1) {
+				System.out.println("");
+				System.out.println("\033[32mEl Pasajero fue registrado exitosamente");
 				System.out.println("");
 			}
-			if(Nombre.length()<1) {
-				System.out.print("\033[37mIngrese Nombre: "+"\033[36m");
-				Nombre = teclado.nextLine();
-				System.out.println("");
+			
+			if(a<5){
+			if(Categoria.equalsIgnoreCase("a")) {
+				catA[a]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+				a++;
 			}
-			if(Telefono.length()<1) {
-				System.out.print("\033[37mIngrese Numero de Telefono: "+"\033[36m");
-				Telefono = teclado.nextLine();
-				System.out.println("");
-			}
-			if(Categoria.length()<1) {
-				System.out.print("\033[37mIngrese Categoria: "+"\033[36m");
-				Categoria = teclado.nextLine();
-				System.out.println("");
-			}
-			pasTodos[veces]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-		}
-		if(CI.length()>=1 && Nombre.length()>=1 && Telefono.length()>=1 && Categoria.length()>=1) {
-			System.out.println("");
-			System.out.println("\033[32mEl Pasajero fue registrado exitosamente");
-			System.out.println("");
-		}
-		
-		if(a<5){
-		if(Categoria.equalsIgnoreCase("a")) {
-			catA[a]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-			a++;
-		}
-		}if(a==4) {
-			System.out.println("En esta categoria ya no hay espacio");
-			a++;
-		}
-		if(b<5){
-			if(Categoria.equalsIgnoreCase("b")) {
-				catB[b]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-				b++;
-			}
-			}if(b==4) {
+			}if(a==4) {
 				System.out.println("En esta categoria ya no hay espacio");
-				b++;
+				a++;
 			}
-			if(c<5){
-				if(Categoria.equalsIgnoreCase("c")) {
-					catC[c]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-					c++;
+			if(b<5){
+				if(Categoria.equalsIgnoreCase("b")) {
+					catB[b]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+					b++;
 				}
-				}if(c==4) {
+				}if(b==4) {
 					System.out.println("En esta categoria ya no hay espacio");
-					c++;
+					b++;
 				}
-				if(d<5){
-					if(Categoria.equalsIgnoreCase("d")) {
-						catD[d]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-						d++;
+				if(c<5){
+					if(Categoria.equalsIgnoreCase("c")) {
+						catC[c]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+						c++;
 					}
-					}if(d==4) {
+					}if(c==4) {
 						System.out.println("En esta categoria ya no hay espacio");
-						d++;
+						c++;
 					}
-					if(e<5){
-						if(Categoria.equalsIgnoreCase("e")) {
-							catE[e]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-							e++;
+					if(d<5){
+						if(Categoria.equalsIgnoreCase("d")) {
+							catD[d]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+							d++;
 						}
-						}if(e==4) {
+						}if(d==4) {
 							System.out.println("En esta categoria ya no hay espacio");
-							e++;
+							d++;
 						}
-						if(f<5){
-							if(Categoria.equalsIgnoreCase("f")) {
-								catF[f]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
-								f++;
+						if(e<5){
+							if(Categoria.equalsIgnoreCase("e")) {
+								catE[e]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+								e++;
 							}
-							}if(f==4) {
+							}if(e==4) {
 								System.out.println("En esta categoria ya no hay espacio");
-								f++;
+								e++;
 							}
-							
-		}
+							if(f<5){
+								if(Categoria.equalsIgnoreCase("f")) {
+									catF[f]="C.I.: "+"033[36m"+CI+"\033[37m"+"\nNombre: "+"\033[36m"+Nombre+"\033[37m"+"\nTelefono: "+"\033[36m"+Telefono+"\033[37m"+"\nCategoria: "+"\033[36m"+Categoria;
+									f++;
+								}
+								}if(f==4) {
+									System.out.println("En esta categoria ya no hay espacio");
+									f++;
+								}
+								System.out.println("Para salir al menu anterior presione 1,Salir del Programa presione 0, si desea continuar, aprete cualquier numero");
+								opcion=teclado.nextInt();
+								if(opcion==1) {
+								menuPrincipal();
+								}
+								if (opcion==0){
+									veces=999;
+								System.out.println("Saliendo...");
+								
+								}
+								}
+
+		}while(opcion!=0);
 	}
 	
 //	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -270,30 +282,41 @@ public class Proyecto {
 	}
 //	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	public void registrarParada(){
-		System.out.println("Registrar Paradas Hasta el aburrimiento");
 		do {
+			System.out.println("Registrar Paradas Hasta el Aburrimiento");
 			for(int suma=0; suma<Paradas.length;suma++) {
-			System.out.println("Ingrese Nombre de la Parada: ");
-			Nombre=teclado.nextLine();
-			Nombre=teclado.nextLine();
-			Paradas[suma]="Nombre: "+Nombre;
-			suma++;
-			System.out.println("Ingrese codigo de la parada: ");
-			codigo=teclado.nextLine();
-			Paradas[suma]="Código: "+codigo;
-			}
-			System.out.println("Para Salir anterior presione 1, o si quiere salir del programa presione 0, si desea continuar presione cualquier letra/numero");
-			opcion=teclado.nextInt();
-			if(opcion==1) {
-			menuPrincipal();
-			}
-			if(opcion==0) {
-				System.out.println("Saliendo...");
-				}
+				System.out.println("Ingrese Nombre de la Parada: ");
+				Nombre=teclado.nextLine();
+				Nombre=teclado.nextLine();
+				Paradas[suma]="Nombre: "+Nombre;
+				suma++;
+				
+				System.out.println("Ingrese codigo de la parada: ");
+				codigo=teclado.nextLine();
+				Paradas[suma]="Código: "+codigo;
 
+//				Falta que no se puedan duplicar 
+
+				System.out.println("Para salir al menu anterior presione 1,Salir del Programa presione 0, si desea continuar, aprete cualquier numero");
+				opcion=teclado.nextInt();
+				if(opcion==1) {
+				menuPrincipal();
+				}
+				if (opcion==0){
+					suma=999;
+				System.out.println("Saliendo...");
+				
+				}
+				}
+		
 		}while(opcion!=0);
 	}
 //	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+//	Debo arreglar para que no se puedan duplicar
+	
 	public void registrarConexiones(){
 		String conexiones[]=new String[30];
 		String paradaOrigen,paradaDestino,km;
