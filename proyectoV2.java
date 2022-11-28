@@ -1,6 +1,8 @@
+import java.lang.invoke.MethodHandles.Lookup.ClassOption;
 import java.util.Scanner;
 public class proyectoV2 {
 		Scanner t = new Scanner(System.in);
+		Scanner n = new Scanner(System.in);
 		Scanner teclado = new Scanner(System.in);
 		String [] catA = new String[5];
 		String [] catB = new String[5];
@@ -15,6 +17,7 @@ public class proyectoV2 {
 		String categoria = "";
 		String telefono = "";
 		String codigo = "";
+		int siono = 0;
 		int opcion = 0;
 		
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -27,7 +30,7 @@ public class proyectoV2 {
 				System.out.println("   3-Salir");
 				System.out.println("--------------------------");
 				System.out.print("Elije: ");
-				opcion = t.nextInt();
+				opcion = n.nextInt();
 				System.out.println(" ");
 				
 				switch(opcion) {
@@ -42,7 +45,7 @@ public class proyectoV2 {
 					break;
 				default:
 					System.out.println("Esa opcion no existe, elija otra");
-					opcion=t.nextInt();
+					opcion=n.nextInt();
 				}
 				
 			}while(opcion!=3);
@@ -59,7 +62,7 @@ public class proyectoV2 {
 				System.out.println("   5-Salir del Programa");
 				System.out.println("--------------------------");
 				System.out.print("Elije: ");
-				opcion = t.nextInt();
+				opcion = n.nextInt();
 				System.out.println(" ");
 				
 				switch(opcion) {
@@ -80,7 +83,7 @@ public class proyectoV2 {
 					break;
 				default:
 					System.out.println("Esa opcion no existe, elija otra");
-					opcion=t.nextInt();
+					opcion=n.nextInt();
 				}
 				
 			}while(opcion!=5);
@@ -100,7 +103,7 @@ public class proyectoV2 {
 				System.out.println("   7-Salir del Programa");
 				System.out.println("--------------------------");
 				System.out.print("Elije: ");
-				opcion = t.nextInt();
+				opcion = n.nextInt();
 				System.out.println(" ");
 				
 				switch(opcion) {
@@ -127,7 +130,7 @@ public class proyectoV2 {
 					break;
 				default:
 					System.out.println("Esa opcion no existe, elija otra");
-					opcion=t.nextInt();
+					opcion=n.nextInt();
 				}
 				
 			}while(opcion!=7);
@@ -135,6 +138,40 @@ public class proyectoV2 {
         }
 //-------------------------------------------------------------------------------------------------------------------------------------------------
         public void registrarPasajero() {
+        	do {
+        		System.out.print("Ingrese Numero de Cedula:");
+        		ci=t.nextLine();
+        		while(ci.length()<7) {
+         			System.out.println("");
+        			System.out.println("Numero de Cedula No Valido, digitos insuficientes");
+        			System.out.print("Ingrese Otra: ");
+        			ci=teclado.nextLine();
+   
+        		}
+        		
+        		System.out.print("Ingrese Nombre:");
+        		nombre=t.nextLine();
+        		while(nombre.length()<3) {
+        			System.out.println("Nombre no válido, demasiado corto");
+        			System.out.print("Ingrese otro: ");
+        			nombre=t.nextLine();
+        			
+        		}
+        		
+        		System.out.print("Ingrese Numero de Telefono:");
+        		telefono=t.nextLine();
+        		
+        		System.out.print("Ingrese Categoria:");
+        		categoria=t.nextLine();
+        		
+        		System.out.println("Desea Continuar? 1-Si / 0-No");
+        		siono=n.nextInt();
+        		if(siono==1) {
+        			registrarPasajero();
+        		}
+        		
+        	}while(siono!=0);
+        	menuPasajeros();
         	
         }
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -175,4 +212,3 @@ public class proyectoV2 {
 		IanC.menuPrincipal();
 	}
 }
-
